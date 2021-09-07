@@ -1,0 +1,102 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update User</h2>
+            <span class="text-light">Use the below form to Update an account</span>
+        </div>
+
+
+ <form method="POST" id="update_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="<%= user._id %>">
+            <input type="text" name="name" value="<%= user.name %>" placeholder="Sree">
+        </div>
+
+        <div class="form-group">
+            <label for="type" class="text-light">Type</label>
+            <input type="text" name="Type" value="<%= user.type%>" placeholder="example@gmail.com">
+        </div>
+
+        <div class="form-group">
+            <label for="sname" class="text-light">Seller Name</label>
+            <input type="text" name="sname" value="<%= user.sname%>" placeholder="Varsh">
+        </div>
+
+        <div class="form-group">
+            <label for="saddr" class="text-light">Seller Address</label>
+            <input type="text" name="saddr" value="<%= user.saddr%>" placeholder="House Number">
+        </div>
+
+        <div class="form-group">
+            <label for="desc" class="text-light">Description</label>
+            <input type="text" name="desc" value="<%= user.desc%>" placeholder="about">
+        </div>
+
+        <div class="form-group">
+            <label for="colors" class="text-light">Colors</label>
+            <input type="text" name="colors" value="<%= user.colors%>" placeholder="Black/Blue">
+        </div>
+        
+        <div class="form-group">
+            <label for="price" class="text-light">Price</label>
+            <input type="text" name="price" value="<%= user.price%>" placeholder="Rs.2000">
+        </div>
+
+        <div class="form-group">
+            <label for="dimensions" class="text-light">Dimensions</label>
+            <input type="text" name="dimensions" value="<%= user.dimensions%>" placeholder="Varsh">
+        </div>
+
+        <div class="form-group">
+            <label for="warranty" class="text-light">Warranty</label>
+            <input type="text" name="warranty" value="<%= user.warranty%>" placeholder="2yrs">
+        </div>
+        
+        <div class="form-group">
+            <label for="weight" class="text-light">Weight</label>
+            <input type="text" name="weight" value="<%= user.weight%>" placeholder="100gms">
+        </div>
+
+        <div class="form-group">
+            <label for="model" class="text-light">Model Number</label>
+            <input type="text" name="model" value="<%= user.model%>" placeholder="Model number">
+        </div>
+
+        <div class="form-group">
+            <label for="connection" class="text-light">Connection</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="connection" value="wireless" <%= user.connection == 'wireless' ? 'checked' : '' %>>
+                <label for="radio-2" class="radio-label">Wireless</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="connection" value="wired"  <%= user.connection == 'wired' ? 'checked' : '' %> >
+                <label for="radio-3" class="radio-label">wired</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+
+
+<!-- include footer -->
+<%- include('include/_footer') %>
